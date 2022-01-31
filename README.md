@@ -1,7 +1,7 @@
 # 15 minutes real time Twitter clone
 
 > Updated to use Phoenix ~> 1.6.  
-> You can check the original implementation [here](https://github.com/josecfreittas/phoenix-liveview-15m.twitter/tree/phoenix1.5)
+> You can check the original implementation [here](https://github.com/josecfreittas/phoenix-liveview-15m.twitter/tree/phoenix1.5), and the diff [here](https://github.com/josecfreittas/phoenix-liveview-15m.twitter/compare/phoenix1.5...main)
 
 To start your Phoenix server:
 
