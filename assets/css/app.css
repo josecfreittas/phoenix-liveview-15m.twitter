@@ -1,6 +1,6 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
-@import "../node_modules/nprogress/nprogress.css";
+@import "./nprogress.css";
 
 /* LiveView specific classes for your customizations */
 .invalid-feedback {
@@ -100,31 +100,31 @@
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 10px;
+}
 
-  .user_name {
-    font-size: 15px;
-    font-weight: bold;
-  }
+.post .user_name {
+  font-size: 15px;
+  font-weight: bold;
+}
 
-  .row {
-    margin: 0;
-    max-width: 100%;
-  }
+.post .row {
+  margin: 0;
+  max-width: 100%;
+}
 
-  .post-avatar {
-    border-radius: 50%;
-    overflow: hidden;
-    font-size: 0;
-    margin-top: 10px;
-  }
+.post .post-avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 0;
+  margin-top: 10px;
+}
 
-  .post-body {
-    margin-top: 10px;
-  }
+.post .post-body {
+  margin-top: 10px;
+}
 
-  .actions_bar {
-    font-size: 14px;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-  }
+.post .actions_bar {
+  font-size: 14px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
 }

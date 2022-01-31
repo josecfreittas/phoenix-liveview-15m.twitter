@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :chirp,
   ecto_repos: [Chirp.Repo]
@@ -17,6 +17,14 @@ config :chirp, ChirpWeb.Endpoint,
   render_errors: [view: ChirpWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Chirp.PubSub,
   live_view: [signing_salt: "8ugIt1ff"]
+
+config :esbuild,
+  version: "0.14.0",
+  default: [
+    args: ~w(js/app.js --bundle --target=es2016 --outdir=../priv/static/assets),
+    cd: Path.expand("../assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

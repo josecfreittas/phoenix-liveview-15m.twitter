@@ -37,7 +37,6 @@ defmodule Chirp.Timeline do
     broadcast({:ok, post}, :post_updated)
   end
 
-
   @doc """
   Gets a single post.
 

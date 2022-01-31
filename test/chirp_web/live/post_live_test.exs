@@ -5,8 +5,18 @@ defmodule ChirpWeb.PostLiveTest do
 
   alias Chirp.Timeline
 
-  @create_attrs %{body: "some body", likes_count: 42, reposts_count: 42, username: "some username"}
-  @update_attrs %{body: "some updated body", likes_count: 43, reposts_count: 43, username: "some updated username"}
+  @create_attrs %{
+    body: "some body",
+    likes_count: 42,
+    reposts_count: 42,
+    username: "some username"
+  }
+  @update_attrs %{
+    body: "some updated body",
+    likes_count: 43,
+    reposts_count: 43,
+    username: "some updated username"
+  }
   @invalid_attrs %{body: nil, likes_count: nil, reposts_count: nil, username: nil}
 
   defp fixture(:post) do
@@ -33,7 +43,7 @@ defmodule ChirpWeb.PostLiveTest do
       {:ok, index_live, _html} = live(conn, Routes.post_index_path(conn, :index))
 
       assert index_live |> element("a", "New Post") |> render_click() =~
-        "New Post"
+               "New Post"
 
       assert_patch(index_live, Routes.post_index_path(conn, :new))
 
@@ -55,7 +65,7 @@ defmodule ChirpWeb.PostLiveTest do
       {:ok, index_live, _html} = live(conn, Routes.post_index_path(conn, :index))
 
       assert index_live |> element("#post-#{post.id} a", "Edit") |> render_click() =~
-        "Edit Post"
+               "Edit Post"
 
       assert_patch(index_live, Routes.post_index_path(conn, :edit, post))
 
@@ -95,7 +105,7 @@ defmodule ChirpWeb.PostLiveTest do
       {:ok, show_live, _html} = live(conn, Routes.post_show_path(conn, :show, post))
 
       assert show_live |> element("a", "Edit") |> render_click() =~
-        "Edit Post"
+               "Edit Post"
 
       assert_patch(show_live, Routes.post_show_path(conn, :edit, post))
 

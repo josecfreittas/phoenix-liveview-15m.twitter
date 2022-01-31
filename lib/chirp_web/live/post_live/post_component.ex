@@ -2,12 +2,12 @@ defmodule ChirpWeb.PostLive.PostComponent do
   use ChirpWeb, :live_component
 
   def render(assigns) do
-    ~L"""
-      <div id="post-<%= @post.id %>" class="post">
+    ~H"""
+      <div id={"post-#{@post.id}"} class="post">
         <div class="row">
           <div class="column column-10">
             <div class="post-avatar">
-              <img src="https://via.placeholder.com/100" alt="<%= @post.username %>">
+              <img src="https://via.placeholder.com/100" alt={ @post.username }>
             </div>
           </div>
           <div class="column column-90 post-body">
@@ -19,12 +19,12 @@ defmodule ChirpWeb.PostLive.PostComponent do
 
         <div class="row actions_bar">
           <div class="column column-33 text-center">
-            <a href="#" phx-click="like" phx-target="<%= @myself %>">
+            <a href="#" phx-click="like" phx-target={ @myself }>
               <span>💟</span> <%= @post.likes_count %>
             </a>
           </div>
           <div class="column column-33 text-center">
-            <a href="#" phx-click="repost" phx-target="<%= @myself %>">
+            <a href="#" phx-click="repost" phx-target={ @myself }>
               <span>🔄</span> <%= @post.reposts_count %>
             </a>
           </div>
@@ -40,6 +40,11 @@ defmodule ChirpWeb.PostLive.PostComponent do
         </div>
       </div>
     """
+  end
+
+  def handle_event("delete", _, socket) do
+    IO.inspect("DELETOOOOU")
+    {:noreply, socket}
   end
 
   def handle_event("like", _, socket) do

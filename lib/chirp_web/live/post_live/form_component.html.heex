@@ -1,0 +1,16 @@
+<div>
+  <h2><%= @title %></h2>
+
+  <.form let={f} for={@changeset}
+    id="post-form"
+    phx-target={@myself}
+    phx_change="validate"
+    phx_submit="save">
+
+    <%= label f, :body %>
+    <%= textarea f, :body %>
+    <%= error_tag f, :body %>
+
+    <%= submit "Save", phx_disable_with: "Saving..." %>
+  </.form>
+</div>
