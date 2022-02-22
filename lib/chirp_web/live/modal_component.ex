@@ -4,16 +4,18 @@ defmodule ChirpWeb.ModalComponent do
   @impl true
   def render(assigns) do
     ~H"""
-    <div id={ @id } class="phx-modal"
+    <div
+      id={@id}
+      class="phx-modal"
       phx-capture-click="close"
       phx-window-keydown="close"
       phx-key="escape"
-      phx-target={"\##{@id}"}
-      phx-page-loading>
-
+      phx-target="#{@id}"
+      phx-page-loading
+    >
       <div class="phx-modal-content">
-        <%= live_patch raw("&times;"), to: @return_to, class: "phx-modal-close" %>
-        <%= live_component @component, @opts %>
+        <%= live_patch(raw("&times;"), to: @return_to, class: "phx-modal-close") %>
+        <%= live_component(@component, @opts) %>
       </div>
     </div>
     """

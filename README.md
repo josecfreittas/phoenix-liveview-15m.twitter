@@ -1,5 +1,7 @@
 # 15 minutes real time Twitter clone
 
+Based on [Build a real-time Twitter clone in 15 minutes with LiveView and Phoenix 1.5](https://www.youtube.com/watch?v=MZvmYaFkNJI).
+
 > Updated to use Phoenix ~> 1.6.  
 > You can check the original implementation [here](https://github.com/josecfreittas/phoenix-liveview-15m.twitter/tree/phoenix1.5), and the diff [here](https://github.com/josecfreittas/phoenix-liveview-15m.twitter/compare/phoenix1.5...main)
 
